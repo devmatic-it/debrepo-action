@@ -1,0 +1,6 @@
+version: '3'
+services:
+  debrepo-actiom:
+    image: deprepo-action
+    container_name: debrepo-action  
+    build: .
