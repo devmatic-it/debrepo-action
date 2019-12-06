@@ -1,6 +1,7 @@
 # action.yml
 name: 'debrepo'
 description: 'Debian Repository Release to GitHub Pages'
+author: 'Ferenc Bator <bator@devmatic-it.com>'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
