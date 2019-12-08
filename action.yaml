@@ -16,3 +16,4 @@ runs:
   args:
     - ${{ inputs.codename }}
     - ${{ inputs.package }}
+

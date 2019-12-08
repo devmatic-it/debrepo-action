@@ -1,6 +1,6 @@
-#!/bin/sh -l
+#!/bin/bash
 
-set -ex
+echo "input Arguments $1 $2 $3"
 
 # get input parameters from args
 CODENAME="$1"
