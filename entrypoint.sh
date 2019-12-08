@@ -39,4 +39,4 @@ git commit -m "Added Debian Repository to master"
 
 echo "Push repository to master"
 #git push -u origin master         
-git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
