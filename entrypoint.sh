@@ -9,7 +9,7 @@ echo "GITHUB_REF is ${GITHUB_REF}"
 echo "PACKAGE is ${PACKAGE}"
 echo "CODENAME is ${CODENAME}"
 echo "DEBFILE_URL is ${DEBFILE_URL}"
-
+echo `ls`
 #apt-get update -y
 #apt-get install -y --no-install-recommends reprepro
 #reprepro --basedir REPOSITORY.PATH includedeb ${CODENAME} ${PACKAGE}

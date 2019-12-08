@@ -2,18 +2,6 @@
 name: 'debrepo'
 description: 'Debian Repository Release to GitHub Pages'
 author: 'Ferenc Bator <bator@devmatic-it.com>'
-inputs:
-  codename:  # debian code name
-    description: 'Debian code name like sid, buster ,...'
-    required: true
-    default: 'buster'
-  package:  # debian package file name
-    description: 'debian package file name e.g. debcvescan_0.1.10_linux_amd64.deb'
-    required: true    
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - "CODE"
-    - "Package"
-
