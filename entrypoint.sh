@@ -2,7 +2,7 @@
 
 TAG=$(git tag)
 
-DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
+DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG:2}/${PACKAGE}"
 REPOSITORY="./docs/debian"
 
 echo "GITHUB_EVENT_PATH: ${GITHUB_EVENT_PATH}"
