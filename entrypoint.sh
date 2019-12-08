@@ -2,7 +2,6 @@
 
 TAG=$(git tag)
 
-
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 REPOSITORY="./docs/debian"
 
@@ -15,15 +14,13 @@ echo "REPOSITORY: ${REPOSITORY}"
 echo "GITHUB_ACTOR: ${GITHUB_ACTOR}" 
 echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
 
-#wget ${DEBFILE_URL}
+echo "Fetching Debian package ${DEBFILE_URL}"
+#wget -q ${DEBFILE_URL}
 wget -q https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb
 
 
 echo "Creating Debian Repository"
-reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
-
-#OUTPUT=$(ls -la)
-#echo ${OUTPUT}
+reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb
 
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"
