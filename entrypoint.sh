@@ -22,5 +22,5 @@ wget -q https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debc
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 
-OUTPUT="ls -la"
+OUTPUT=$(ls -la)
 echo ${OUTPUT}
