@@ -3,15 +3,16 @@ name: 'debrepo'
 description: 'Debian Repository Release to GitHub Pages'
 author: 'Ferenc Bator <bator@devmatic-it.com>'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  codename:  # debian code name
+    description: 'Debian code name like sid, buster ,...'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: 'buster'
+  package:  # debian package file name
+    description: 'debian package file name e.g. debcvescan_0.1.10_linux_amd64.deb'
+    required: true    
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.codename }}
+    - ${{ inputs.package }}

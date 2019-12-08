@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v1
-      - name: Create Debian repository test2
+      - name: Create Debian repository test
         uses: ./
         with:
-          who-to-greet: 'hello world'
+          package: 'debcvescan_0.1.10_linux_amd64.deb'
         env: 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
