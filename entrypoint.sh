@@ -12,6 +12,7 @@ echo "PACKAGE: ${PACKAGE}"
 echo "CODENAME: ${CODENAME}"
 echo "DEBFILE_URL: ${DEBFILE_URL}"
 echo "REPOSITORY: ${REPOSITORY}"
+echo "GITHUB_ACTOR: ${GITHUB_ACTOR}" 
 echo "GITHUB_TOKEN: ${GITHUB_TOKEN}"
 
 #wget ${DEBFILE_URL}
@@ -20,3 +21,6 @@ wget -q https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debc
 
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
+
+OUTPUT="ls -la"
+echo ${OUTPUT}
