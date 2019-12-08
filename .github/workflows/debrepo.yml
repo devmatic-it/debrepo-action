@@ -12,5 +12,8 @@ jobs:
         uses: ./
         env: 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          PACKAGE: 'debcvescan_0.1.10_linux_amd64.deb'
+          #PACKAGE: 'debcvescan_0.1.10_linux_amd64.deb'
+          NAME: 'debcvescan'
+          ARCH: 'amd64'
+          OS: 'linux'
           CODENAME: 'buster'
