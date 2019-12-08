@@ -25,6 +25,9 @@ reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 OUTPUT=$(ls -la)
 echo ${OUTPUT}
 
+git config --global user.name ${GITHUB_ACTOR}
+git config --global user.email "${GITHUB_ACTOR}@gmail.com"
+
 git add ${REPOSITORY}
 git commit -m "Added Debian Repository to master"
 git push -u origin master
