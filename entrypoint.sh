@@ -9,8 +9,8 @@ PACKAGE="$2"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF}/${PACKAGE}"
 
 echo "GITHUB_REF is ${GITHUB_REF}"
-echo "PACKAGE is ${PACKAGE}"
-echo "CODENAME is ${CODENAME}"
+echo "PACKAGE is $2"
+echo "CODENAME is $1"
 echo "DEBFILE_URL is ${DEBFILE_URL}"
 
 #apt-get update -y
