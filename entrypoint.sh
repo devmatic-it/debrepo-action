@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TAG=$(git tag)
-VERSION="${TAG:2}"
-PACKAGE="${NAME}_${TAG:2}_${OS}_${ARCH}.deb"
+VERSION="${TAG:1}"
+PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 REPOSITORY="./docs/debian"
 
