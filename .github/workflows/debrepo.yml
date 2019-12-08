@@ -11,8 +11,8 @@ jobs:
       - name: Create Debian repository test
         uses: ./
         env: 
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          #PACKAGE: 'debcvescan_0.1.10_linux_amd64.deb'
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}          
+          REPOSITORY: './docs/debian'
           NAME: 'debcvescan'
           ARCH: 'amd64'
           OS: 'linux'
