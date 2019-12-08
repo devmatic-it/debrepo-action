@@ -2,7 +2,7 @@
 
 TAG=$(git tag)
 
-https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb
+#https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 
 echo "GITHUB_EVENT_PATH: ${GITHUB_EVENT_PATH}"
