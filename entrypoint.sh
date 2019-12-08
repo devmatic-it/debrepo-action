@@ -28,8 +28,11 @@ reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"
 
+echo "Git status"
+git status
+
 echo "Adding ${REPOSITORY} to master"
-git add ${REPOSITORY}
+git add --all ${REPOSITORY}
 
 echo "Commit repository"
 git commit -m "Added Debian Repository to master"
