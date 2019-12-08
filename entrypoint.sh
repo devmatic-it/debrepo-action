@@ -3,8 +3,8 @@
 set -ex
 
 # get input parameters from args
-CODENAME=$1
-PACKAGE=$2
+CODENAME="$1"
+PACKAGE="$2"
 
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF}/${PACKAGE}"
 
