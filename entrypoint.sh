@@ -21,3 +21,7 @@ OUTPUT=$(ls)
 echo "Directory list:\n${OUTPUT}"
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
+
+OUTPUT=$(ls -lR ${REPOSITORY})
+echo "Directory list:"
+echo ${OUTPUT}
