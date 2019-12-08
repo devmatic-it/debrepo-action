@@ -1,7 +1,7 @@
 # Container image that runs your code
 FROM debian:stable-slim
 
-RUN apt-get update -y ; apt-get install -y --no-install-recommends git reprepro
+RUN apt-get update -y ; apt-get install -y --no-install-recommends git reprepro wget
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
