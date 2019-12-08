@@ -22,12 +22,17 @@ wget -q https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debc
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 
-OUTPUT=$(ls -la)
-echo ${OUTPUT}
+#OUTPUT=$(ls -la)
+#echo ${OUTPUT}
 
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"
 
+echo "Adding ${REPOSITORY} to master"
 git add ${REPOSITORY}
+
+echo "Commit repository"
 git commit -m "Added Debian Repository to master"
+
+echo "Push repository to master"
 git push -u origin master
