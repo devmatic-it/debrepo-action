@@ -14,7 +14,7 @@ echo "DEBFILE_URL: ${DEBFILE_URL}"
 echo "REPOSITORY: ${REPOSITORY}"
 
 #wget ${DEBFILE_URL}
-wget https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb
+wget -q https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb
 
 
 OUTPUT=$(ls)
