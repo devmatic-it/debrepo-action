@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TAG=$(git tag)
+TAG=$(git tag | sort -V | tail -1)
 VERSION="${TAG:1}"
 PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
