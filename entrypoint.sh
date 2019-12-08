@@ -24,3 +24,7 @@ reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 
 OUTPUT=$(ls -la)
 echo ${OUTPUT}
+
+git add ${REPOSITORY}
+git commit -m "Added Debian Repository to master"
+git push -u origin master
