@@ -28,8 +28,8 @@ reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} ${PACKAGE}
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"
 
-echo "Git status"
-git status
+echo "Checkout master"
+git checkout master
 
 echo "Adding ${REPOSITORY} to master"
 git add --all ${REPOSITORY}
