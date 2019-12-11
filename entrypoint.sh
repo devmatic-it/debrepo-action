@@ -14,6 +14,9 @@ echo "CODENAME: ${CODENAME}"
 echo "REPOSITORY: ${REPOSITORY}"
 echo "DEBFILE_URL: ${DEBFILE_URL}"
 
+echo "Creating repository directory"
+mkdir -p ${REPOSITORY}
+
 echo "Importing public key from environment variable"
 echo "${PUBLIC_KEY}" | gpg --import
 echo "${PUBLIC_KEY}" > ${REPOSITORY}/PUBLIC.KEY
