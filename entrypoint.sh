@@ -16,6 +16,7 @@ echo "DEBFILE_URL: ${DEBFILE_URL}"
 
 echo "Creating repository directory"
 mkdir -p ${REPOSITORY}
+mkdir -p ${REPOSITORY}/conf
 
 echo "Importing public key from environment variable"
 echo "${PUBLIC_KEY}" | gpg --import
