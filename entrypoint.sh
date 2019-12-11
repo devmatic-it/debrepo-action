@@ -14,6 +14,11 @@ echo "CODENAME: ${CODENAME}"
 echo "REPOSITORY: ${REPOSITORY}"
 echo "DEBFILE_URL: ${DEBFILE_URL}"
 
+
+GIT_PAGES_OWNER=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $1}'`
+GIT_PAGES_PATH=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $2}'`
+GIT_PAGES_URL="${GIT_PAGES_OWNER}.github.io/${GIT_PAGES_PATH}/debian"
+
 echo "Creating repository directory"
 mkdir -p ${REPOSITORY}
 mkdir -p ${REPOSITORY}/conf
@@ -28,8 +33,8 @@ KEY_ID=`gpg -K --with-colons | awk -F ":" '{if (length($8) >0)print $8}'`
 echo "Using KEY.ID ${KEY_ID}"
 
 echo "Creating Repository distributions file"
-echo "Origin: devmatic-it.github.io/debrepo-action/debian" > ${REPOSITORY}/conf/distributions
-echo "Label: devmatic-it.github.io/debrepo-action/debian" >> ${REPOSITORY}/conf/distributions
+echo "Origin: ${GIT_PAGES_URL}" > ${REPOSITORY}/conf/distributions
+echo "Label: ${GIT_PAGES_URL}" >> ${REPOSITORY}/conf/distributions
 echo "Codename: ${CODENAME}" >> ${REPOSITORY}/conf/distributions
 echo "Architectures: ${ARCH}" >> ${REPOSITORY}/conf/distributions
 echo "Components: main" >> ${REPOSITORY}/conf/distributions
