@@ -11,6 +11,8 @@ jobs:
       - name: Create Debian repository test
         uses: ./
         env: 
+          PUBLIC_KEY: ${{secrets.PUBLIC_KEY}}     
+          PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}     
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}          
           REPOSITORY: './docs/debian'
           NAME: 'debcvescan'
