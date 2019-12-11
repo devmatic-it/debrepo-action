@@ -24,6 +24,8 @@ echo "${PUBLIC_KEY}" > ${REPOSITORY}/PUBLIC.KEY
 
 echo "Importing private key from environment variable"
 echo "${PRIVATE_KEY}" | gpg --import
+KEY_ID=`gpg -K --with-colons | awk -F ":" '{if (length($8) >0)print $8}'`
+echo "Using KEY.ID ${KEY_ID}"
 
 echo "Creating Repository distributions file"
 echo "Origin: devmatic-it.github.io/debrepo-action/debian" > ${REPOSITORY}/conf/distributions
@@ -32,7 +34,8 @@ echo "Codename: ${CODENAME}" >> ${REPOSITORY}/conf/distributions
 echo "Architectures: ${ARCH}" >> ${REPOSITORY}/conf/distributions
 echo "Components: main" >> ${REPOSITORY}/conf/distributions
 echo "Description: Personal repository" >> ${REPOSITORY}/conf/distributions
-echo "SignWith: default" >> ${REPOSITORY}/conf/distributions
+echo "SignWith: ${KEY_ID}" >> ${REPOSITORY}/conf/distributions
+
 
 echo "Fetching Debian package ${DEBFILE_URL}"
 wget -q ${DEBFILE_URL}
