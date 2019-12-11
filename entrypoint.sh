@@ -39,7 +39,7 @@ echo "Codename: ${CODENAME}" >> ${REPOSITORY}/conf/distributions
 echo "Architectures: ${ARCH}" >> ${REPOSITORY}/conf/distributions
 echo "Components: main" >> ${REPOSITORY}/conf/distributions
 echo "Description: Personal repository" >> ${REPOSITORY}/conf/distributions
-echo "SignWith: ${KEY_ID}" >> ${REPOSITORY}/conf/distributions
+echo "SignWith: default" >> ${REPOSITORY}/conf/distributions
 
 
 echo "Fetching Debian package ${DEBFILE_URL}"
