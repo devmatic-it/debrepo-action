@@ -30,7 +30,11 @@ This action creates a private Debian Repository using Github pages.
 
 ### `PRIVATE_KEY`
 
-**Required** Private GPG key used to sign the Debian packages
+**Required** Private GPG key used to sign the Debian packages exported with empty password
+
+### `PUBLIC_KEY`
+
+**Required** Public GPG key used to sign the Debian packages
 
 ## Create and distribute GPG keys
 
@@ -42,6 +46,7 @@ This action creates a private Debian Repository using Github pages.
 
 ## Example usage
 
+```yaml
 name: DebianRepository
 on: [push]
 
@@ -63,6 +68,7 @@ jobs:
           ARCH: 'amd64'
           OS: 'linux'
           CODENAME: 'buster'
+```
 
 ## Credits
 

@@ -6,7 +6,7 @@ PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 
 # for development only
-DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"
+DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.11/debcvescan_0.1.11_linux_amd64.deb"
 
 echo "TAG: ${TAG}"
 echo "PACKAGE: ${PACKAGE}"
@@ -14,10 +14,12 @@ echo "CODENAME: ${CODENAME}"
 echo "REPOSITORY: ${REPOSITORY}"
 echo "DEBFILE_URL: ${DEBFILE_URL}"
 
-echo "Importing GPG keys from environment variables"
-echo -e "${PUBLIC_KEY}" | gpg --import
-echo -e "${PRIVATE_KEY}" | gpg --import
-echo -e "${PUBLIC_KEY}" > ${REPOSITORY}/PUBLIC.KEY
+echo "Importing public key from environment variable"
+echo "${PUBLIC_KEY}" | gpg --import
+echo "${PUBLIC_KEY}" > ${REPOSITORY}/PUBLIC.KEY
+
+echo "Importing private key from environment variable"
+echo "${PRIVATE_KEY}" | gpg --import
 
 echo "Creating Resitory conf file"
 echo "Origin: devmatic-it.github.io/debrepo-action/debian" > ${REPOSITORY}/conf/distributions
