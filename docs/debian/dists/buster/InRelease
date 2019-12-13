@@ -4,7 +4,7 @@ Hash: SHA512
 Origin: devmatic-it.github.io/debrepo-action/debian
 Label: devmatic-it.github.io/debrepo-action/debian
 Codename: buster
-Date: Fri, 13 Dec 2019 08:04:21 UTC
+Date: Fri, 13 Dec 2019 08:09:12 UTC
 Architectures: i386 amd64
 Components: main
 Description: Personal repository
@@ -31,12 +31,12 @@ SHA256:
  a1d2f7e8252109eac5dd591375e14f3ff9de4250d99ed0ff53f0f1d919d5a706 172 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQEyBAEBCgAdFiEERfODSO6I/Lru45xVnXwDugBAeJ8FAl3zRgUACgkQnXwDugBA
-eJ9vkQf4+sK+ZBoFOMqLX3eso3RIuNIlM3rKxHGJVQqMTwfh8ZWrIgRWrG06+/Ki
-qKHDMYg5DBdn4WSjHrlQrVTxh0AWr/wLIh3nXiU3L0et49fjK8cOQ4slpEwRkuS2
-X29nMYW4DJBCTnXMJohN2LlUGzOJKGQWY/smzEW46jIoCsjLtzb6SVFC1C3eyeUC
-JujpLAFjOkj8PNovuC0pVlkGdqBAv6+awEZCS71JYnNFXznXkKX6qLUoCfwEEa30
-SG3arlxEhtc2vNTOfr53cYit/1PjWreR7g3GwIvQplTGNB3+13M+ce4HVtYqMUx2
-dBJfHh1y76cMYsA3ExB6Tt+I723L
-=Tbbf
+iQEzBAEBCgAdFiEERfODSO6I/Lru45xVnXwDugBAeJ8FAl3zRygACgkQnXwDugBA
+eJ+cowf8CpW1bW61/kObwrc2Qp/k8CwwtlbLFl2ngCoqfNjTwR8wOTnn2NyKZ8Yk
+7CW4nOt8oH5lPAchEIpf8EeUy67h7///kouExknhR+OaIS3EL7XJTa+im3sODMQx
+o3mQwmLgLoKJk2NR2Cuv2aS7T+e7qCqOy37UEH55rG4+0kqP/YLxBgHOZ4lY+RU9
+ejXpYShBZ7ESQHLRGL5hFck+ThfzUukr0dCBTYJZQAEQfUUNH97gPXApRn7gweie
+OgYA8mlTSKQZxC+HW7Q8o+oN0AxK/patg471bdmUj2XEQ4PXcUJiSoGCNCRryNYD
+Kek68gjyekGG3OeAKiEh39go+y0k3A==
+=GCIV
 -----END PGP SIGNATURE-----
