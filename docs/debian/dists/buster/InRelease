@@ -4,30 +4,39 @@ Hash: SHA512
 Origin: devmatic-it.github.io/debrepo-action/debian
 Label: devmatic-it.github.io/debrepo-action/debian
 Codename: buster
-Date: Fri, 13 Dec 2019 07:29:09 UTC
-Architectures: amd64
+Date: Fri, 13 Dec 2019 08:04:21 UTC
+Architectures: i386 amd64
 Components: main
 Description: Personal repository
 MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-i386/Packages
+ 7029066c27ac6f5ef18d660d5741979a 20 main/binary-i386/Packages.gz
+ a48c3d364f2a1a759d7ae502da183df1 171 main/binary-i386/Release
  b93c39e05cceef551ffe8491b1fb98d1 607 main/binary-amd64/Packages
  30f9d1737b46f34499a22f184c784f70 422 main/binary-amd64/Packages.gz
  dec7ee52c419dcf1497b344f8b2eb54e 172 main/binary-amd64/Release
 SHA1:
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-i386/Packages
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/binary-i386/Packages.gz
+ 190b853ecf69643eb9fa79fd4cdeb893fc2d296e 171 main/binary-i386/Release
  33eec60d1c4b2d4dd8a4c3bbb670dc6f899a085c 607 main/binary-amd64/Packages
  cc3a14b99877cabfa1e87b07adec106fec8fdf07 422 main/binary-amd64/Packages.gz
  1367756fd5bbc0015c766399d1f40b42a47ca8e5 172 main/binary-amd64/Release
 SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-i386/Packages
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/binary-i386/Packages.gz
+ d4ea1ba305dc94d7ecd8f77806e46d3d7f7f468193f37c2410fc5954aee6c873 171 main/binary-i386/Release
  dbeafdfc5502c3720aa2a2f5412c310e39fb47a7a52ede8ecb76fad1ae9a4c33 607 main/binary-amd64/Packages
  428d9c1eb93f0d88f158c6bd514802218154009ec32ade9c423ad728592a518a 422 main/binary-amd64/Packages.gz
  a1d2f7e8252109eac5dd591375e14f3ff9de4250d99ed0ff53f0f1d919d5a706 172 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEERfODSO6I/Lru45xVnXwDugBAeJ8FAl3zPcUACgkQnXwDugBA
-eJ8mTAf/Te+sajz3NzAHQrx6Wrkalrq9H+Zbn7aWwjR6h/pI2kEz+XTLrNVRFKIU
-kleVy1z3DV+AsUyY7Vkk8DNmCjHnOCc3RISpTC+NkvJpmB4K+moA55WdfqQxlw6w
-A6BMLNyCJiFAq8INHLopqDgWEjC9y60VMW0gusI3rlBAUYX41eVOKN/XHeBFAdBX
-Sv+moFGDVSJ+mSBnKBhTd4z5/aLob+aqX5KYMpyCG+UrWKU+WwGLE+XcXFM4rRXy
-o+gzRcdGvvddPQTX5FnzhUPxqtE4sAun/25int8WcLbfI19lMyThlGAlynfp4SEX
-aj/E+1+U0ktoS5qjvRL2Prkn0VIApg==
-=O5JT
+iQEyBAEBCgAdFiEERfODSO6I/Lru45xVnXwDugBAeJ8FAl3zRgUACgkQnXwDugBA
+eJ9vkQf4+sK+ZBoFOMqLX3eso3RIuNIlM3rKxHGJVQqMTwfh8ZWrIgRWrG06+/Ki
+qKHDMYg5DBdn4WSjHrlQrVTxh0AWr/wLIh3nXiU3L0et49fjK8cOQ4slpEwRkuS2
+X29nMYW4DJBCTnXMJohN2LlUGzOJKGQWY/smzEW46jIoCsjLtzb6SVFC1C3eyeUC
+JujpLAFjOkj8PNovuC0pVlkGdqBAv6+awEZCS71JYnNFXznXkKX6qLUoCfwEEa30
+SG3arlxEhtc2vNTOfr53cYit/1PjWreR7g3GwIvQplTGNB3+13M+ce4HVtYqMUx2
+dBJfHh1y76cMYsA3ExB6Tt+I723L
+=Tbbf
 -----END PGP SIGNATURE-----
