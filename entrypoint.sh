@@ -46,7 +46,8 @@ git config --global user.email "${GITHUB_ACTOR}@gmail.com"
 echo "Checkout master"
 git checkout master
 
-echo "Creating repository directory"
+echo "Reset repository directory"
+rm -Rf ${REPOSITORY}
 mkdir -p ${REPOSITORY}
 mkdir -p ${REPOSITORY}/conf
 
