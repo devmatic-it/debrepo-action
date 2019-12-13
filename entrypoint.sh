@@ -21,8 +21,8 @@ DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${
 
 # for development only
 if [[ -z "${TESTING}" ]]; then
-echo "TESTING ONLY!!!"
-DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
+    echo "TESTING ONLY!!!"
+    DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
 fi
 
 GIT_PAGES_OWNER=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $1}'`
@@ -63,7 +63,7 @@ echo "Fetching Debian package ${DEBFILE_URL}"
 wget -q ${DEBFILE_URL}
 
 echo "Creating Debian Repository"
-reprepro --basedir ${REPOSITORY} includedeb all ${CODENAME} *.deb
+reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb
 
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"

@@ -14,7 +14,7 @@ jobs:
           PUBLIC_KEY: ${{secrets.PUBLIC_KEY}}     
           PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}     
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          TESTING: "1"
+          TESTING: '1'
           REPOSITORY: './docs/debian'
           NAME: 'debcvescan'
           ARCH: 'amd64'
