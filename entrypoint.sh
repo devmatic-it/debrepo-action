@@ -40,6 +40,12 @@ echo "DEBFILE_AMD64_URL: ${DEBFILE_AMD64_URL}"
 echo "DEBFILE_I386_URL: ${DEBFILE_I386_URL}"
 echo "GIT_PAGES_URL: ${GIT_PAGES_URL}"
 
+git config --global user.name ${GITHUB_ACTOR}
+git config --global user.email "${GITHUB_ACTOR}@gmail.com"
+
+echo "Checkout master"
+git checkout master
+
 echo "Creating repository directory"
 mkdir -p ${REPOSITORY}
 mkdir -p ${REPOSITORY}/conf
@@ -69,12 +75,6 @@ wget -q ${DEBFILE_I386_URL}
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb
 (($? != 0)) && { printf '%s\n' "ERROR: An error occured creating the repostory"; exit 1; }
-
-git config --global user.name ${GITHUB_ACTOR}
-git config --global user.email "${GITHUB_ACTOR}@gmail.com"
-
-echo "Checkout master"
-git checkout master
 
 echo "Adding ${REPOSITORY} to master"
 git add --all ${REPOSITORY}
