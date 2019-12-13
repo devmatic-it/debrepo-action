@@ -20,7 +20,7 @@ PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 
 # for development only
-if [ -z "${TESTING}" ]; then
+if [[ -v TESTING ]]; then
     echo "TESTING ONLY!!!"
     DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
 fi
