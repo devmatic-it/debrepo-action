@@ -16,13 +16,16 @@
 
 TAG=$(git tag | sort -V | tail -1)
 VERSION="${TAG:1}"
-PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
-DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
+PACKAGE_AMD64="${NAME}_${VERSION}_${OS}_amd64.deb"
+PACKAGE_I386="${NAME}_${VERSION}_${OS}_i386.deb"
+DEBFILE_AMD64_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE_AMD64}"
+DEBFILE_I386_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE_I386}"
 
 # for development only
 if [[ -v TESTING ]]; then
     echo "TESTING ONLY!!!"
-    DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
+    DEBFILE_AMD64_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
+    DEBFILE_I386_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_i386.deb"
 fi
 
 GIT_PAGES_OWNER=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $1}'`
@@ -33,7 +36,8 @@ echo "TAG: ${TAG}"
 echo "PACKAGE: ${PACKAGE}"
 echo "CODENAME: ${CODENAME}"
 echo "REPOSITORY: ${REPOSITORY}"
-echo "DEBFILE_URL: ${DEBFILE_URL}"
+echo "DEBFILE_AMD64_URL: ${DEBFILE_AMD64_URL}"
+echo "DEBFILE_I386_URL: ${DEBFILE_I386_URL}"
 echo "GIT_PAGES_URL: ${GIT_PAGES_URL}"
 
 echo "Creating repository directory"
@@ -53,14 +57,14 @@ echo "Creating Repository distributions file"
 echo "Origin: ${GIT_PAGES_URL}" > ${REPOSITORY}/conf/distributions
 echo "Label: ${GIT_PAGES_URL}" >> ${REPOSITORY}/conf/distributions
 echo "Codename: ${CODENAME}" >> ${REPOSITORY}/conf/distributions
-echo "Architectures: ${ARCH}" >> ${REPOSITORY}/conf/distributions
+echo "Architectures: i386 amd64" >> ${REPOSITORY}/conf/distributions
 echo "Components: main" >> ${REPOSITORY}/conf/distributions
 echo "Description: Personal repository" >> ${REPOSITORY}/conf/distributions
 echo "SignWith: default" >> ${REPOSITORY}/conf/distributions
 
-
-echo "Fetching Debian package ${DEBFILE_URL}"
-wget -q ${DEBFILE_URL}
+echo "Fetching Debian packages"
+wget -q ${DEBFILE_AMD64_URL}
+wget -q ${DEBFILE_I386_URL}
 
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb

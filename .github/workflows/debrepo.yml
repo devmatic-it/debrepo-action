@@ -16,7 +16,6 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           TESTING: '1'
           REPOSITORY: './docs/debian'
-          NAME: 'debcvescan'
-          ARCH: 'amd64'
+          NAME: 'debcvescan'          
           OS: 'linux'
           CODENAME: 'buster'
