@@ -1,4 +1,18 @@
 #!/bin/bash
+# Package dpkg Debian Package Manager Interface
+# Copyright 2019 debcvescan authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 TAG=$(git tag | sort -V | tail -1)
 VERSION="${TAG:1}"
@@ -6,7 +20,10 @@ PACKAGE="${NAME}_${VERSION}_${OS}_${ARCH}.deb"
 DEBFILE_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/${PACKAGE}"
 
 # for development only
-#DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"
+if [[ -z "${TESTING}" ]]; then
+echo "TESTING ONLY!!!"
+DEBFILE_URL="https://github.com/devmatic-it/debcvescan/releases/download/v0.1.10/debcvescan_0.1.10_linux_amd64.deb"  
+fi
 
 GIT_PAGES_OWNER=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $1}'`
 GIT_PAGES_PATH=`echo "${GITHUB_REPOSITORY}" | awk -F "/" '{print $2}'`
@@ -46,7 +63,7 @@ echo "Fetching Debian package ${DEBFILE_URL}"
 wget -q ${DEBFILE_URL}
 
 echo "Creating Debian Repository"
-reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb
+reprepro --basedir ${REPOSITORY} includedeb all ${CODENAME} *.deb
 
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"

@@ -1,4 +1,4 @@
-# DEBREPO Github action
+# Debrepo Github action
 
 This action creates a private Debian Repository using Github pages.
 
