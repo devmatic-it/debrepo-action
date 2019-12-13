@@ -1,4 +1,4 @@
-name: DebianRepository
+name: Integration Testing
 on: [push]
 
 jobs:
