@@ -64,6 +64,7 @@ wget -q ${DEBFILE_URL}
 
 echo "Creating Debian Repository"
 reprepro --basedir ${REPOSITORY} includedeb ${CODENAME} *.deb
+(($? != 0)) && { printf '%s\n' "ERROR: An error occured creating the repostory"; exit 1; }
 
 git config --global user.name ${GITHUB_ACTOR}
 git config --global user.email "${GITHUB_ACTOR}@gmail.com"
