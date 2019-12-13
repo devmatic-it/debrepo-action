@@ -1,0 +1,5 @@
+Component: main
+Origin: devmatic-it.github.io/debrepo-action/debian
+Label: devmatic-it.github.io/debrepo-action/debian
+Architecture: amd64
+Description: Personal repository
